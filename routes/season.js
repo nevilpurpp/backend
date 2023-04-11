@@ -8,16 +8,16 @@ app.get('/:id/season/:snum', (req, res, next) => {
 	axios
 		.all([
 			axios.get(
-				`${baseUrl}/tv/${req.params.id}/season/${req.params.snum}${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}`
+				`${baseUrl}/tv/${req.params.id}/season/${req.params.snum}${process.env.API_KEY}`
 			),
 			axios.get(
-				`${baseUrl}/tv/${req.params.id}/season/${req.params.snum}/videos${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}`
+				`${baseUrl}/tv/${req.params.id}/season/${req.params.snum}/videos${process.env.API_KEY}`
 			),
 			axios.get(
-				`${baseUrl}/tv/${req.params.id}/season/${req.params.snum}/images${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&language=en-US&include_image_language=en`
+				`${baseUrl}/tv/${req.params.id}/season/${req.params.snum}/images${process.env.API_KEY}&language=en-US&include_image_language=en`
 			),
 			axios.get(
-				`${baseUrl}/tv/${req.params.id}/season/${req.params.snum}/credits${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&language=en-US&include_image_language=en`
+				`${baseUrl}/tv/${req.params.id}/season/${req.params.snum}/credits${process.env.API_KEY}&language=en-US&include_image_language=en`
 			),
 		])
 		.then(
