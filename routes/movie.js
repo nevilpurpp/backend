@@ -7,18 +7,18 @@ const baseUrl = 'https://api.themoviedb.org/3'
 app.get('/:id', (req, res, next) => {
 	axios
 		.all([
-			axios.get(`${baseUrl}/movie/${req.params.id}${process.env.API_KEY}`),
+			axios.get(`${baseUrl}/movie/${req.params.id}${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}`),
 			axios.get(
-				`${baseUrl}/movie/${req.params.id}/videos${process.env.API_KEY}`
+				`${baseUrl}/movie/${req.params.id}/videos${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}`
 			),
 			axios.get(
-				`${baseUrl}/movie/${req.params.id}/images${process.env.API_KEY}&language=en-US&include_image_language=en`
+				`${baseUrl}/movie/${req.params.id}/images${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&language=en-US&include_image_language=en`
 			),
 			axios.get(
-				`${baseUrl}/movie/${req.params.id}/credits${process.env.API_KEY}&language=en-US&include_image_language=en`
+				`${baseUrl}/movie/${req.params.id}/credits${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&language=en-US&include_image_language=en`
 			),
 			axios.get(
-				`${baseUrl}/movie/${req.params.id}/similar${process.env.API_KEY}&language=en-US&include_image_language=en`
+				`${baseUrl}/movie/${req.params.id}/similar${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&language=en-US&include_image_language=en`
 			),
 		])
 		.then(
@@ -39,7 +39,7 @@ app.get('/:id', (req, res, next) => {
 app.get('/omdb/:id', (req, res, next) => {
 	axios
 		.get(
-			`http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&i=${req.params.id}`
+			`http://www.omdbapi.com/?apikey=${process.env.812aabf5}&i=${req.params.id}`
 		)
 		.then((data) => {
 			res.status(200).json({
