@@ -6,7 +6,7 @@ const baseUrl = 'https://api.themoviedb.org/3'
 app.get('/movie', (req, res, next) => {
 	axios
 		.get(
-			`${baseUrl}/discover/movie${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&include_adult=true&language=en-US&sort_by=popularity.desc&with_genres=${req.query.id}&page=${req.query.page}`
+			`${baseUrl}/discover/movie${process.env.API_KEY}&include_adult=true&language=en-US&sort_by=popularity.desc&with_genres=${req.query.id}&page=${req.query.page}`
 		)
 		.then((data) => {
 			res.status(200).json({
@@ -21,7 +21,7 @@ app.get('/movie', (req, res, next) => {
 app.get('/tv', (req, res, next) => {
 	axios
 		.get(
-			`${baseUrl}/discover/tv${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&include_adult=true&language=en-US&sort_by=popularity.desc&with_genres=${req.query.id}&page=${req.query.page}`
+			`${baseUrl}/discover/tv${process.env.API_KEY}&include_adult=true&language=en-US&sort_by=popularity.desc&with_genres=${req.query.id}&page=${req.query.page}`
 		)
 		.then((data) => {
 			res.status(200).json({
@@ -34,3 +34,4 @@ app.get('/tv', (req, res, next) => {
 		.catch((err) => next(err))
 })
 export default app
+
