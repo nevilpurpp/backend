@@ -6,16 +6,16 @@ const baseUrl = 'https://api.themoviedb.org/3'
 app.get('/:id', (req, res, next) => {
 	axios
 		.all([
-			axios.get(`${baseUrl}/tv/${req.params.id}${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}`),
-			axios.get(`${baseUrl}/tv/${req.params.id}/videos${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}`),
+			axios.get(`${baseUrl}/tv/${req.params.id}${process.env.API_KEY}`),
+			axios.get(`${baseUrl}/tv/${req.params.id}/videos${process.env.API_KEY}`),
 			axios.get(
-				`${baseUrl}/tv/${req.params.id}/images${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&language=en-US&include_image_language=en`
+				`${baseUrl}/tv/${req.params.id}/images${process.env.API_KEY}&language=en-US&include_image_language=en`
 			),
 			axios.get(
-				`${baseUrl}/tv/${req.params.id}/credits${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&language=en-US&include_image_language=en`
+				`${baseUrl}/tv/${req.params.id}/credits${process.env.API_KEY}&language=en-US&include_image_language=en`
 			),
 			axios.get(
-				`${baseUrl}/tv/${req.params.id}/similar${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&language=en-US&include_image_language=en`
+				`${baseUrl}/tv/${req.params.id}/similar${process.env.API_KEY}&language=en-US&include_image_language=en`
 			),
 		])
 		.then(
@@ -34,3 +34,4 @@ app.get('/:id', (req, res, next) => {
 })
 
 export default app
+
