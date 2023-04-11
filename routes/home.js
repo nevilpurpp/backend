@@ -6,20 +6,20 @@ const baseUrl = 'https://api.themoviedb.org/3'
 app.get('/', (req, res, next) => {
 	axios
 		.all([
-			axios.get(`${baseUrl}/trending/movie/day${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}`),
-			axios.get(`${baseUrl}/movie/now_playing${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}`),
+			axios.get(`${baseUrl}/trending/movie/day${process.env.API_KEY}`),
+			axios.get(`${baseUrl}/movie/now_playing${process.env.API_KEY}`),
 			axios.get(
-				`${baseUrl}/movie/top_rated${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&page=${Math.floor(
+				`${baseUrl}/movie/top_rated${process.env.API_KEY}&page=${Math.floor(
 					Math.random() * 100
 				)}`
 			),
-			axios.get(`${baseUrl}/trending/tv/day${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}`),
+			axios.get(`${baseUrl}/trending/tv/day${process.env.API_KEY}`),
 			axios.get(
-				`${baseUrl}/tv/top_rated${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&page=${Math.floor(
+				`${baseUrl}/tv/top_rated${process.env.API_KEY}&page=${Math.floor(
 					Math.random() * 100
 				)}`
 			),
-			axios.get(`${baseUrl}/movie/upcoming${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}`),
+			axios.get(`${baseUrl}/movie/upcoming${process.env.API_KEY}`),
 		])
 		.then(
 			axios.spread(
