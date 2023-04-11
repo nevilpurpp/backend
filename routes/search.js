@@ -6,7 +6,7 @@ const baseUrl = 'https://api.themoviedb.org/3'
 app.get('/movie', (req, res, next) => {
 	axios
 		.get(
-			`${baseUrl}/search/movie${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&query=${req.query.text}&page=${req.query.page}&include_adult=true`
+			`${baseUrl}/search/movie${process.env.API_KEY}&query=${req.query.text}&page=${req.query.page}&include_adult=true`
 		)
 		.then((data) => {
 			res.status(200).json({
@@ -21,7 +21,7 @@ app.get('/movie', (req, res, next) => {
 app.get('/tv', (req, res, next) => {
 	axios
 		.get(
-			`${baseUrl}/search/tv${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&query=${req.query.text}&page=${req.query.page}&include_adult=true`
+			`${baseUrl}/search/tv${process.env.API_KEY}&query=${req.query.text}&page=${req.query.page}&include_adult=true`
 		)
 		.then((data) => {
 			res.status(200).json({
@@ -36,7 +36,7 @@ app.get('/tv', (req, res, next) => {
 app.get('/person', (req, res, next) => {
 	axios
 		.get(
-			`${baseUrl}/search/person${process.env.b54760b5d03ffc4ebc273f0b3d5ad9f7}&query=${req.query.text}&page=${req.query.page}&include_adult=true`
+			`${baseUrl}/search/person${process.env.API_KEY}&query=${req.query.text}&page=${req.query.page}&include_adult=true`
 		)
 		.then((data) => {
 			res.status(200).json({
